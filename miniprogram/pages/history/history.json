@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "记录",
+  "usingComponents": {
+    "v-icon": "@vant/weapp/icon/index",
+    "v-popup": "@vant/weapp/popup/index",
+    "v-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "v-empty": "@vant/weapp/empty/index",
+    "todo-item": "../../components/todoItem/index"
+  }
+}

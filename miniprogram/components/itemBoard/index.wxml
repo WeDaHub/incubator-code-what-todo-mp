@@ -1,0 +1,48 @@
+<!--components/createBoard/index.wxml-->
+<view class="create-board-container mask" wx:if="{{ show }}">
+    <view class="board">
+        <view class="board-box">
+            <view class="board-header">
+                <text class="h-title">{{ title }}</text>
+                <v-icon class="close" name="cross" size="20" bind:click="close" />
+            </view>
+        <view class="block desc">
+            <text class="desc-title">要做点什么？</text>
+            <input 
+                disabled="{{ type === 'view' }}" 
+                class="field-input {{ type === 'view' ? 'disabled' : '' }}" 
+                placeholder="what you wanna do" 
+                data-type="desc" maxlength="20" 
+                value="{{ desc }}" 
+                bindinput="onChange"
+            >
+            </input>
+        </view>
+        <view class="block remark">
+            <view class="title">备注</view>
+            <textarea 
+                disabled="{{ type === 'view' }}" 
+                placeholder="remark for your todo" 
+                class="remark-textarea {{ type === 'view' ? 'disabled' : '' }}" 
+                maxlength="200" 
+                data-type="remark" 
+                value="{{ remark }}" 
+                bindinput="onChange"
+            >
+            </textarea>
+        </view>
+        <view class="block level-radio">
+            <view class="title">优先级</view>
+                <view class="level-radio-container">
+                    <block wx:for="{{ levelList }}" wx:key="index">
+                        <view class="level l-{{ item.level }} {{ level === item.level ? 'active' : '' }}" data-level="{{ item.level }}" bindtap="levelChange">
+                            <view class="circle"></view>
+                            <text class="text">{{ item.text }}</text>
+                        </view>
+                    </block>
+                </view>
+        </view>
+        </view>
+        <v-button custom-class="operate-btn" color="#5A95FF" bindtap="save" block>{{ btnText }}</v-button>
+    </view>
+</view>

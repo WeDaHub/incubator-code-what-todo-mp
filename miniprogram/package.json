@@ -1,0 +1,16 @@
+{
+  "name": "what-todo-app",
+  "version": "1.0.0",
+  "description": "what todo mp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ciromail@126.com",
+  "license": "MIT",
+  "dependencies": {
+    "@vant/weapp": "^1.6.8",
+    "dayjs": "^1.10.4",
+    "miniprogram-computed": "^4.0.4"
+  }
+}

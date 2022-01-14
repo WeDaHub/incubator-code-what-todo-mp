@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/history/history"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "今天做什么",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#acacac",
+    "selectedColor": "#5A95FF",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "清单",
+        "iconPath": "./assets/icons/list.png",
+        "selectedIconPath": "./assets/icons/list_active.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "记录",
+        "iconPath": "./assets/icons/history.png",
+        "selectedIconPath": "./assets/icons/history_active.png"
+      }
+    ]
+  }
+}

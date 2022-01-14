@@ -1,0 +1,64 @@
+<!--miniprogram/pages/history/history.wxml-->
+<view class="history-container">
+    <view class="picker-btn">
+        <view class="choose-type" data-type="date" bindtap="openDatePopUp">
+            <view class="calendar-icon day" size="30"  />
+            <text class="date-text">{{ dateText }}</text>
+        </view>
+        <view class="choose-type" data-type="year-month" bindtap="openDatePopUp" >
+            <view class="calendar-icon month" size="30"  />
+            <text class="date-text">{{ yearMonthText }}</text>
+        </view>
+    </view>
+    <view class="history-list" wx:if="{{ monthList.length || dayList.length }}" >
+        <view class="stat-info">
+            <view class="text total">总数: {{ total }}</view>
+            <view class="text done">完成: {{ doneNums }}</view>
+            <view class="text undone">未完成: {{ unDoneNums }}</view>
+            <view class="text done-rate">完成率: {{ doneRate }}</view>
+        </view>
+        <block wx:if="{{ dayList.length }}" wx:for="{{ dayList }}" wx:key="index" >
+            <todo-item
+                index="{{index}}"
+                disabled="{{true}}" 
+                todoId="{{item._id}}" 
+                desc="{{item.desc}}" 
+                done="{{item.done}}"
+                remark="{{item.remark}}" 
+            ></todo-item>
+        </block>
+        <block wx:if="{{ monthList.length }}" wx:for="{{ monthList }}" wx:key="index">
+            <view class="month-panel">
+                <view class="panel-title">{{ item.dateStr }}</view>
+                <todo-item 
+                    wx:for="{{ item.value }}"
+                    wx:for-index="idx"
+                    wx:for-item="el"
+                    wx:key="idx"
+                    index="{{ idx }}"
+                    disabled="{{ true }}"
+                    todoId="{{ el._id }}"
+                    desc="{{ el.desc }}"
+                    done="{{ el.done }}"
+                    remark="{{el.remark}}"
+                ></todo-item>
+            </view>
+        </block>
+    </view>
+    <v-empty wx:else="{{ !dayList.length || !monthList.length }}" description="暂无数据" />
+    <v-popup 
+        show="{{ showDatePopUp }}"
+        position="bottom"
+        custom-style="height: 36%;"
+        bind:close="closeDatePopUp"
+    >
+        <v-datetime-picker
+            type="{{ type }}"
+            title="选择日期"
+            value="{{ currentDate }}"
+            formatter="{{ formatter }}"
+            bind:confirm="dateConfirm"
+            bind:cancel="closeDatePopUp" 
+        />
+    </v-popup>
+</view>

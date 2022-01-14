@@ -1,0 +1,10 @@
+<!--components/viewBoard/index.wxml-->
+<view class="view-board-container mask" wx:if="{{ show }}">
+    <view class="views-container">
+        <v-icon class="close" name="cross" size="20" color="#999" bindtap="close"></v-icon>
+        <view class="content">
+            <view class="title">{{ title }}</view>
+            <view class="texts">{{ text }}</view>
+        </view>
+    </view>
+</view>

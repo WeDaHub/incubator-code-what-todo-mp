@@ -1,0 +1,43 @@
+
+.list-container {
+    margin-bottom: 56rpx;
+    .header-box {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 40rpx 0;
+        .title {
+            font-size: 40rpx;
+            color: #333;
+            font-weight: bold;
+        }
+        .date {
+            margin-top: 12rpx;
+            font-size: 32rpx;
+            color: #333;
+        }
+    }
+    .add-btn {
+        width: 112rpx;
+        height: 112rpx;
+        border-radius: 50%;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 16px;
+        background: var(--main-color);
+        box-shadow: 0 8px 20px 0px rgba(103, 170, 247, 68%);
+        &::after {
+            content: '';
+            width: 80rpx;
+            height: 80rpx;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0;
+            background: url('https://vfiles.gtimg.cn/vupload/20210521/d5ac181621580281390.png') center no-repeat;
+            background-size: 100% auto;
+        }
+    }
+}

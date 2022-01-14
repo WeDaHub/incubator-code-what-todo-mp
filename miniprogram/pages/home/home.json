@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "todo-item": "../../components/todoItem/index",
+    "item-board": "../../components/itemBoard/index",
+    "v-empty": "@vant/weapp/empty/index",
+    "v-action-sheet": "@vant/weapp/action-sheet/index",
+    "v-dialog": "@vant/weapp/dialog/index",
+    "v-popup": "@vant/weapp/popup/index",
+    "view-board": "../../components/viewBoard/index"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "v-checkbox": "@vant/weapp/checkbox/index",
+    "v-icon": "@vant/weapp/icon/index"
+  }
+}

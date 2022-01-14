@@ -1,0 +1,12 @@
+<!--components/todoItem/index.wxml-->
+<view class="todo-item {{ disabled ? 'disabled' : '' }}" bind:longpress="longPress">
+    <view class="inner" bind:tap="toggle">
+        <v-checkbox shape="round" checked-color="{{ checkedColor }}" value="{{ done }}">
+            <text class="text {{done ? 'done' : ''}} {{ disabled ? 'disabled' : '' }}" >{{ desc }}</text>
+        </v-checkbox>
+    </view>
+    <view class="more-operate" wx:if="{{ !disabled }}">
+        <v-icon class="icon" wx:if="{{ remark }}" color="{{ getIconColor }}" size="20" name="notes-o" bindtap="remarkTap" />
+        <view class="icon level-icon l-{{ level }}" wx="{{ level > -1 }}" />
+    </view>
+</view>

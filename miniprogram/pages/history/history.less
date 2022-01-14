@@ -1,0 +1,76 @@
+.history-container {
+    display: flex;
+    flex-direction: column;
+    .picker-btn {
+        height: 40rpx;
+        display: flex;
+        justify-content: space-around;
+        padding: 16rpx 4%;
+        margin-top: 20rpx;
+        font-size: 28rpx;
+        color: #333;
+        .choose-type {
+            display: flex;
+            flex: 1;
+        }
+        .date-text {
+            margin-left: 20rpx;
+        }
+        .calendar-icon {
+            width: 44rpx;
+            height: 44tpx;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% auto;
+            &.day {
+                background-image: url('https://vfiles.gtimg.cn/vupload/20210525/4aac1a1621925120632.png');
+            }
+            &.month {
+                background-image: url('https://vfiles.gtimg.cn/vupload/20210525/17411e1621925120634.png');
+            }
+        }
+    }
+    .stat-info {
+        display: flex;
+        align-items: center;
+        margin: 20rpx 3%;
+        padding: 0 20rpx;
+        .text {
+            margin-right: 8rpx;
+            font-size: 24rpx;
+            position: relative;
+            display: flex;
+            align-items: center;
+            &::before {
+                content: '';
+                width: 8rpx;
+                margin-right: 4rpx;
+                height: 8rpx;
+                border-radius: 8rpx;
+                display: inline-block;
+                background: #333;
+            }
+            &.done::before {
+                background-color: #22f1cb;
+            }
+            &.undone::before {
+                background-color: #e05d10;
+            }
+            &.done-rate::before {
+                background: var(--main-color);
+            }
+        }
+    }
+    .month-panel {
+        margin: 20rpx 0;
+        padding: 24rpx 0 24rpx 0;
+        border: 1rpx solid #eaeaea;
+        .panel-title {
+            font-size: 24rpx;
+            color: #999;
+            padding-left: 4%;
+        }
+    }
+    
+}

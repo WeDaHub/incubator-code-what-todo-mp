@@ -1,0 +1,61 @@
+.todo-item {
+  display: flex;
+  height: 104rpx;
+  border-radius: 8rpx;
+  padding: 0 20px;
+  padding-right: 40px;
+  border: 1rpx solid rgba(208, 208, 208, 0.41);
+  margin: 20rpx 4% 0 4%;
+  position: relative;
+}
+.todo-item:not(.disabled) {
+  box-shadow: 0 8px 12px rgba(214, 214, 214, 0.15);
+}
+.todo-item.disabled {
+  background: #f5f5f5;
+  color: var(--inactive-color);
+}
+.todo-item .inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  flex: 1;
+}
+.todo-item .inner .text.done {
+  text-decoration: line-through;
+  color: var(--inactive-color);
+}
+.todo-item .inner .text.disabled {
+  color: var(--inactive-color);
+}
+.todo-item .more-operate {
+  position: absolute;
+  height: 100%;
+  right: 20rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+.todo-item .icon:not(:last-child) {
+  margin-right: 16rpx;
+}
+.todo-item .level-icon {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+}
+.todo-item .l-0 {
+  background: var(--level-0-color);
+}
+.todo-item .l-1 {
+  background: var(--level-1-color);
+}
+.todo-item .l-2 {
+  background: var(--level-2-color);
+}
+.todo-item .l-3 {
+  background: var(--level-3-color);
+}

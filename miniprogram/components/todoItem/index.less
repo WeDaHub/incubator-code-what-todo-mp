@@ -1,0 +1,64 @@
+.todo-item {
+    display: flex;
+    height: 104rpx;
+    border-radius: 8rpx;
+    padding: 0 20px;
+    padding-right: 40px;
+    border: 1rpx solid rgba(208, 208, 208, 41%);
+    margin: 20rpx 4% 0 4%;
+    position: relative;
+    &:not(.disabled) {
+        box-shadow: 0 8px 12px rgba(214, 214, 214, 0.15);
+    }
+    &.disabled {
+        background: #f5f5f5;
+        color: var(--inactive-color);
+    }
+    .inner {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 28rpx;
+        flex: 1;
+        .text.done
+        {
+            text-decoration: line-through;
+            color: var(--inactive-color);
+        }
+        .text.disabled {
+            color: var(--inactive-color);
+        }
+    }
+    .more-operate {
+        position: absolute;
+        height: 100%;
+        right: 20rpx;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+    }
+    .icon {
+        &:not(:last-child) {
+            margin-right: 16rpx;
+        }
+    }
+    .level-icon {
+        width: 28rpx;
+        height: 28rpx;
+        border-radius: 28rpx;
+        box-sizing: border-box;
+    }
+    .l-0 {
+        background: var(--level-0-color);
+    }
+    .l-1 {
+        background: var(--level-1-color);
+    }
+    .l-2 {
+        background: var(--level-2-color);
+    }
+    .l-3 {
+        background: var(--level-3-color);
+    }
+}

@@ -1,0 +1,47 @@
+<!--miniprogram/pages/home/home.wxml-->
+<view class="list-container {{ showBoard ? 'fixed' : ''}}">
+    <view class="header-box">
+        <tview class="title">What Todo Today</tview>
+        <view class="date">{{ today }}</view>
+    </view>
+    <todo-item
+        wx:if="{{$.todoList.length}}"  
+        wx:for="{{$.todoList}}"
+        wx:key="index" 
+        index="{{index}}" 
+        todoId="{{item._id}}" 
+        desc="{{item.desc}}" 
+        done="{{item.done}}"
+        remark="{{item.remark}}"
+        level="{{item.level}}"
+        bind:itemToggle="itemToggle"
+        bind:todoLongPress="todoLongPress"
+        bind:remarkTap="openViewsBoard"
+    />
+    <v-empty wx:if="{{!$.todoList.length}}" description="今天没有任务哦~" ></v-empty>
+    <button class="add-btn" bindtap="openBoard"></button>
+    <item-board 
+        show="{{ showBoard }}" 
+        todoId="{{todoItem.todoId}}"
+        index="{{todoItem.index}}"
+        type="{{ itemBoardType }}"
+        desc="{{ todoItem.desc }}" 
+        level="{{ todoItem.level }}"
+        remark="{{ todoItem.remark }}"
+        done="{{todoItem.done}}"
+        bind:close="closeBoard" 
+        bind:saveTodo="saveTodo" 
+    />
+    <v-action-sheet
+        show="{{ actionShow }}"
+        actions="{{ actions }}"
+        cancel-text="取消"
+        description="操作"
+        round="{{ false }}"
+        bind:select="actionSelect"
+        bind:cancel="closeActions"
+        bind:click-overlay="closeActions"
+    />
+    <v-dialog id="van-dialog"></v-dialog>
+    <view-board show="{{ showViewBoard }}" title="{{ viewBoardTitle }}" text="{{ viewText }}" bind:close="closeViewsBoard" />
+</view>
